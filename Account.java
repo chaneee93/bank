@@ -1,18 +1,27 @@
 public class Account {
+    private static long lastNumber = 1000;
+    private static int totalAccounts = 0;
+
+    private final long number;
     private final String owner;
     private int balance;
 
     public Account(String owner, int balance) {
+        this.number = ++lastNumber;
         this.owner = owner;
         this.balance = balance;
+        totalAccounts++;
     }
 
     public Account(String owner) {
         this(owner, 0);
     }
 
+    public long getNumber()  { return number; }
     public String getOwner() { return owner; }
     public int getBalance()  { return balance; }
+
+    public static int getTotalAccounts() { return totalAccounts; }
 
     public void deposit(int amount) {
         if (amount <= 0) {
