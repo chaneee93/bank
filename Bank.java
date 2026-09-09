@@ -1,5 +1,6 @@
 public class Bank {
     public static void main(String[] args) {
+        System.out.println("========== BANK ==========");
         Account a = new Account();
         a.owner = "홍길동";
         a.balance = 50000;
